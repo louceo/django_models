@@ -1,0 +1,73 @@
+# Все ID связаны с бд, в которой уже есть записи
+
+1.
+User.objects.create_user('David50')
+User.objects.create_user('methodman')
+2. 
+Author.objects.create(user_id = 5)
+Author.objects.create(user_id = 6)
+3. 
+Category.objects.create(name = 'Music')
+Category.objects.create(name = 'Artists')
+Category.objects.create(name = 'Producers')
+Category.objects.create(name = 'News')
+4. 
+author_david = Author.objects.get(user=5) # David50 
+author_methodman = Author.objects.get(user=6) # methodman 
+Post.objects.create(
+	header = 'Kendrick Lamar and the Mantle of Black Genius', 
+	content = 'some text', 
+	post_type = Post.article,
+	author = author_david
+)
+Post.objects.create(
+	header = "Why J Dilla May Be Jazz's Latest Great Innovator", 
+	content = 'some text', 
+	post_type = Post.article,
+	author = author_methodman
+)
+Post.objects.create(
+	header = "Kendrick Lamar's 'DAMN.' Wins Historic Pulitzer Prize In Music", 
+	content = 'some text', 
+	post_type = Post.news_post,
+	author = author_methodman
+)
+5. 
+PostCategory.objects.create(post_id=4, category_id=5)
+PostCategory.objects.create(post_id=4, category_id=4)
+PostCategory.objects.create(post_id=4, category_id=3)
+PostCategory.objects.create(post_id=5, category_id=5)
+PostCategory.objects.create(post_id=5, category_id=4)
+PostCategory.objects.create(post_id=5, category_id=3)
+PostCategory.objects.create(post_id=6, category_id=6)
+PostCategory.objects.create(post_id=6, category_id=5)
+6.
+Comment.objects.create(content = 'Wow!', post_id=4, user_id=5)
+Comment.objects.create(content = 'classic', post_id=5, user_id=6)
+Comment.objects.create(content = 'dope', post_id=6, user_id=5)
+Comment.objects.create(content = 'interesting..', post_id=4, user_id=5)
+7.
+Comment.objects.get(post_id=4, user_id=5).like()
+Post.objects.filter(author = author_methodman).first().like()
+Post.objects.all()[5].like() 
+8.
+Author.objects.get(user__username = 'David50').update_rating()
+Author.objects.get(user=6).update_rating()
+9.
+Author.objects.all().order_by('-user_rating').values('user__username', 'user_rating')[0]
+10. 
+Post.objects.all().order_by('-post_rating').values('time_in','author__user__username', 'post_rating', 'header')[0]
+highest_ranking = Post.objects.all().order_by('-post_rating')[0] 
+highest_ranking.preview()
+11. 
+Comment.objects.filter(post = highest_ranking).values('time_in', 'user__username', 'comment_rating', 'content')
+
+
+
+
+
+
+
+
+
+
