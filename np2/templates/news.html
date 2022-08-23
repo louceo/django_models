@@ -1,13 +1,38 @@
 {% extends 'flatpages/default.html' %}
+{% load custom_filter %}
 
 {% block header %}
-    Articles: 
+    <h1 style="font-size: 40px; font-style: italic;">
+        {% if news|length > 1 %}
+            There are {{ news|length }} posts as of {{ time_now|date:'M d Y' }}
+        {% else %}
+            There is {{ news|length }} post as of {{ time_now|date:'M d Y' }}
+        {% endif %}
+    </h1>
 {% endblock %}
-
+<!-- 
 {% block subheader %}
-    {{news}}
 {% endblock%}
 
 {% block content %}
-    
-{% endblock%}
+{% endblock%} -->
+
+{%block ar_title %}
+    <h4 style="font-size: 40px; font-style: italic;">
+        <u>
+            Articles 
+        </u>
+    </h4>
+    </br>
+    {% if news %}
+        {% for n in news %}
+            <hr class="my-4"/>
+            <h4>{{ n.header }}</h4>
+            <p>{{ n.preview|truncatechars:124|censor}}</p>
+            <p style="font-style: italic; font-size: small;">posted by {{ n.author }} on {{ n.time_in }}</p>
+        {% endfor %}
+    {% else %}    
+        <h2> There are no posts.</h2>
+    {% endif %}
+    <hr class="my-4"/>
+{% endblock %}

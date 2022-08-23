@@ -1,17 +1,28 @@
 {% extends 'flatpages/default.html' %}
 {% load static %}
+{% load custom_filter %}
+
+
 {%block image%}
-    <header class="masthead" style="background-image: url('{% static 'assets/img/curtis.jpg' %}')">
+    <header class="masthead" style="background-image: url('{% static 'assets/img/switz.jpg' %}')">
 {% endblock %} 
 
 {% block header %}
-    {{details.header}}
+       <h1>Article #{{ details.id }} </h1>
 {% endblock %}
 
 {% block subheader %}
 {% endblock%}
 
-
 {% block content %}
-    {{details.content}}
 {% endblock%}
+
+
+
+{%block ar_title%}
+    <hr class="my-4"/>
+    <h4>{{ details.header }}</h4>
+    <p>{{ details.content|censor }}</p>
+    <p style="font-style: italic; font-size: small;">posted by {{ details.author }} on {{ details.time_in }}</p>
+    <hr class="my-4"/>
+{% endblock %}

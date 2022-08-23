@@ -58,7 +58,9 @@ class Post(models.Model):
         self.save()
     
     def preview(self):
-        return f'{self.content[:124]}...'
+        if len(self.content)>124:
+            return f'{self.content[:124]}...'
+        return self.content
 
     def __str__(self):
         return f'{self.header.title()}'
