@@ -1,0 +1,10 @@
+{% extends 'news.html' %}
+{% block header %}
+<h1 style="font-size: 40px; font-style: italic;">
+    Search posts
+</h1>
+<form action="" method="get">
+    {{ filterset.form.as_p }}
+    <input type="submit" value="Find" />
+</form>
+{% endblock%}

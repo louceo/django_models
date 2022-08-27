@@ -1,7 +1,20 @@
 from django.urls import path
-from .views import PostList, PostDetails
+from . import views
+
+app_name = 'news'
 
 urlpatterns = [
-    path('', PostList.as_view()),
-    path('<int:pk>', PostDetails.as_view()),
+    path('news/', views.PostList.as_view(), name='news'),
+    path('news/<int:pk>/', views.PostDetails.as_view(), name='detail'),
+    path('news/create/', views.PostCreate.as_view(type='PO'), name='create-post'),
+    path('articles/create/', views.PostCreate.as_view(type='AR'),
+         name='create-article'),
+    path('news/<int:pk>/edit/',
+         views.PostUpdate.as_view(type='PO'), name='edit-post'),
+    path('articles/<int:pk>/edit/',
+         views.PostUpdate.as_view(type='AR'), name='edit-article'),
+    path('news/<int:pk>/delete/', views.PostDelete.as_view(), name='delete-post'),
+    path('articles/<int:pk>/delete/',
+         views.PostDelete.as_view(), name='delete-article'),
+    path('search/', views.PostSearch.as_view(), name='search'),
 ]

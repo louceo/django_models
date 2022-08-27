@@ -1,27 +1,24 @@
 {% extends 'flatpages/default.html' %}
 {% load custom_filter %}
+{% load custom_tags %}
 
 {% block header %}
-    <h1 style="font-size: 40px; font-style: italic;">
-        {% if news|length > 1 %}
-            There are {{ news|length }} posts as of {{ time_now|date:'M d Y' }}
-        {% else %}
-            There is {{ news|length }} post as of {{ time_now|date:'M d Y' }}
-        {% endif %}
+    <h1 style="font-size: 85px; font-family:">
+        MUSIC SCOPE
     </h1>
 {% endblock %}
 
 {%block ar_title %}
     <h4 style="font-size: 40px; font-style: italic;">
         <u>
-            Articles 
+           <a href=" {% url 'news:news' %} ">Articles</a>  
         </u>
     </h4>
     </br>
     {% if news %}
         {% for n in news %}
             <hr class="my-4"/>
-            <h4>{{ n.header }}</h4>
+            <h4><a href="{% url 'news:detail' n.id %}">{{ n.header }}</a></h4>
             <p>{{ n.preview|truncatechars:124|censor}}</p>
             <p style="font-style: italic; font-size: small;">posted by {{ n.author }} on {{ n.time_in }}</p>
         {% endfor %}
@@ -29,4 +26,22 @@
         <h2> There are no posts.</h2>
     {% endif %}
     <hr class="my-4"/>
+
+    {% if page_obj.has_previous %}
+        <a href="?{% url_replace page=1 %}">1</a> 
+        {% if page_obj.previous_page_number != 1 %}
+            ... 
+            <a href="?{% url_replace page=page_obj.previous_page_number %}">{{ page_obj.previous_page_number}}</a>
+        {% endif %}
+    {% endif %}
+
+    {{ page_obj.number }}
+
+    {% if page_obj.has_next %}
+        <a href="?{% url_replace page=page_obj.next_page_number %}">{{ page_obj.next_page_number}}</a>
+        {% if paginator.num_pages != page_obj.next_page_number %}
+            ...
+            <a href="?{% url_replace page=page_obj.paginator.num_pages %}">{{ page_obj.paginator.num_pages }}</a>
+        {% endif %}
+    {% endif %}
 {% endblock %}
