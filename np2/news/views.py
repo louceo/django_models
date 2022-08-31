@@ -1,9 +1,11 @@
-from .models import Post
+from .models import Post, Author
 from django.views.generic import ListView, DetailView, UpdateView, CreateView, DeleteView
 from datetime import datetime
 from .filters import ProductFilter
 from .forms import PostForm
 from django.urls import reverse_lazy
+from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
+from django.shortcuts import redirect
 
 
 class PostList(ListView):
@@ -43,7 +45,8 @@ class PostDetails(DetailView):
     context_object_name = 'detail'
 
 
-class PostCreate(CreateView):
+class PostCreate(PermissionRequiredMixin, LoginRequiredMixin, CreateView):
+    permission_required = ('news.add_post', )
     form_class = PostForm
     model = Post
     template_name = 'post_create.html'
@@ -55,6 +58,7 @@ class PostCreate(CreateView):
             post.post_type = 'PO'
         else:
             post.post_type = 'AR'
+        post.author = Author.objects.get(user=self.request.user.id)
         return super().form_valid(form)
 
     def get_context_data(self, **kwargs):
@@ -63,7 +67,8 @@ class PostCreate(CreateView):
         return context
 
 
-class PostUpdate(UpdateView):
+class PostUpdate(PermissionRequiredMixin, LoginRequiredMixin, UpdateView):
+    permission_required = ('news.change_post',)
     form_class = PostForm
     model = Post
     template_name = 'post_edit.html'
@@ -75,7 +80,8 @@ class PostUpdate(UpdateView):
         return context
 
 
-class PostDelete(DeleteView):
+class PostDelete(PermissionRequiredMixin, LoginRequiredMixin, DeleteView):
+    permission_required = ('news.delete_post',)
     model = Post
     template_name = 'post_delete.html'
     success_url = reverse_lazy('news:news')

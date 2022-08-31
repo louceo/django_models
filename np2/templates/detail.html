@@ -17,11 +17,14 @@
     <p>{{ detail.content|censor }}</p>
     <p style="font-style: italic; font-size: small;">posted by {{ detail.author }} on {{ detail.time_in }}</p>
     <hr class="my-4"/>
-    {% if detail.post_type == 'PO' %}
-        <button onclick="location.href='{% url 'news:edit-post' detail.id %}'" type="button" class="btn btn-primary">Edit Post</button>
-        <button onclick="location.href='{% url 'news:delete-post' detail.id %}'" type="button" class="btn btn-primary">Delete Post</button>
-    {% else %}
-        <button onclick="location.href='{% url 'news:edit-article' detail.id %}'" type="button" class="btn btn-primary">Edit Post</button>
-        <button onclick="location.href='{% url 'news:delete-article' detail.id %}'" type="button" class="btn btn-primary">Delete Post</button>
-    {% endif %}
+    {% comment %} hide buttons if not author {% endcomment %}
+    {% comment %} {% if detail.author.user.id == request.user.id %} {% endcomment %}
+        {% if detail.post_type == 'PO' %}
+            <button onclick="location.href='{% url 'news:edit-post' detail.id %}'" type="button" class="btn btn-primary">Edit Post</button>
+            <button onclick="location.href='{% url 'news:delete-post' detail.id %}'" type="button" class="btn btn-primary">Delete Post</button>
+        {% else %}
+            <button onclick="location.href='{% url 'news:edit-article' detail.id %}'" type="button" class="btn btn-primary">Edit Post</button>
+            <button onclick="location.href='{% url 'news:delete-article' detail.id %}'" type="button" class="btn btn-primary">Delete Post</button>
+        {% endif %}
+    {% comment %} {% endif %} {% endcomment %}
 {% endblock %}

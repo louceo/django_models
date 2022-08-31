@@ -1,24 +1,29 @@
 {% extends 'flatpages/default.html' %}
 
 {% block header %}
-{% if type == post.post_type %}
-    <h1 style="font-size: 40px; font-style: italic;">
-    Edit
-    </h1>
-        <form action="" method="post">
-            {% csrf_token %}
-            {{ form.as_p }}
-            <input type="submit" value="Save"/>
-        </form>
-    {% else %}
-        {% if post.post_type == 'PO' %}
+    {% comment %} hide form if not author  {% endcomment %}
+    {% comment %} {% if object.author.user.id == request.user.id %} {% endcomment %}
+        {% if type == post.post_type %}
             <h1 style="font-size: 40px; font-style: italic;">
-                News post is related to this link, not article. Please use the proper link
+            Edit
             </h1>
-        {% else %}
-            <h1 style="font-size: 40px; font-style: italic;">
-                An article is related to this link, not news post. Please use the proper link
-            </h1>
-        {% endif %}
-    {% endif %}
+                <form action="" method="post">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <input type="submit" value="Save"/>
+                </form>
+            {% else %}
+                {% if post.post_type == 'PO' %}
+                    <h1 style="font-size: 40px; font-style: italic;">
+                        News post is related to this link, not article. Please use the proper link
+                    </h1>
+                {% else %}
+                    <h1 style="font-size: 40px; font-style: italic;">
+                        An article is related to this link, not news post. Please use the proper link
+                    </h1>
+                {% endif %}
+            {% endif %}
+    {% comment %} {% else %}
+        <h1>You cannot edit this post</h1>
+    {% endif %} {% endcomment %}
 {% endblock %}

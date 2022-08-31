@@ -1,0 +1,22 @@
+{% extends 'flatpages/default.html' %}
+{% block header %}
+    <h1>Log In</h1>
+    <form action="" method="post">
+        {% csrf_token %}
+        <table>
+            <tr>
+                <td>{{ form.username.label_tag }}</td>
+                <td>{{ form.username }}</td>
+            </tr>
+            <tr>
+                <td>{{ form.password.label_tag }}</td>
+                <td>{{ form.password }}</td>
+            </tr>
+        </table>
+    </br>
+        <input type="submit" value="Log In">
+    </form>
+    <button><a href="{% url 'sign:sign-up' %}">Sign Up</a></button>
+{% endblock header %}
+
+

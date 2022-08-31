@@ -1,0 +1,13 @@
+{% extends 'flatpages/default.html' %}
+
+{% block header %}
+    <h1 style="font-size: 85px">
+        {{ request.user.username }} profile page
+        <button class="btn btn-primary"><a href="{% url 'sign:logout' %}">Log Out</a></button>
+    </h1>
+    <h2>
+        {% if is_not_staff %}
+            <button class="btn btn-primary"><a href="{% url 'sign:upgrade' %}">Get Staff Access!</a></button> 
+        {% endif %}
+    </h2>
+{% endblock %}
