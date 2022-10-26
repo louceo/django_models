@@ -14,6 +14,18 @@
            <a href=" {% url 'news:news' %} ">Articles</a>  
         </u>
     </h4>
+    <form action="" method="get">
+        {{ categoryfilter.form.as_p }}
+        <input type="submit" value="Search" class="btn btn-primary"/>
+        {% if category_name %}
+            {% if is_not_subscribed %}
+                <button class="btn btn-primary"><a href="{% url 'news:subscribe' category_id %}">Subscribe to {{ category_name }}</a></button> 
+            {% endif %}
+            {% if not is_not_subscribed %}
+                You are subscribed to "{{ category_name }}" category 
+            {% endif %}
+        {% endif %}
+    </form>
     </br>
     {% if news %}
         {% for n in news %}

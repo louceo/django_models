@@ -25,14 +25,7 @@ class UserRegistrationView(generic.CreateView):
 @login_required
 def get_staff_access(request):
     user = request.user
-    premium_group = Group.objects.get(name='staff')
+    staff_group = Group.objects.get(name='staff')
     if not request.user.groups.filter(name='staff').exists():
-        premium_group.user_set.add(user)
+        staff_group.user_set.add(user)
     return redirect('protect:profile')
-
-
-@receiver(user_signed_up)
-def after_user_signed_up(request, user, **kwargs):
-    Author.objects.create(user=user)
-    author_group = Group.objects.get(name='authors')
-    author_group.user_set.add(user)

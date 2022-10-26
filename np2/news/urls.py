@@ -17,4 +17,6 @@ urlpatterns = [
     path('articles/<int:pk>/delete/',
          views.PostDelete.as_view(), name='delete-article'),
     path('search/', views.PostSearch.as_view(), name='search'),
+    path('subscribe/<int:category_id>',
+         views.subscribe_to_category, name='subscribe'),
 ]
