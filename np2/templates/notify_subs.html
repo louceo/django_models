@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>There is a new post in your favorite category!</h2>
+</br>
+    <h2><center>{{ post.header }}</center></h2>
+    <p> {{ post.content }} </p>
+    {% if post.post_type == 'AR' %}
+        <h3><a href="http://127.0.0.1:8000/news/{{ post.id }}">Click to read the full post!</a></h3>
+    {% else %} 
+        <h3><a href="http://127.0.0.1:8000/articles/{{ post.id }}">Click to read the full article!</a></h3>
+    {% endif %}
+</body>
+</html>
