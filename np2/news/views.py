@@ -1,5 +1,6 @@
+from http.client import HTTPResponse
 from .models import Post, Author, Category
-from django.views.generic import ListView, DetailView, UpdateView, CreateView, DeleteView
+from django.views.generic import ListView, DetailView, UpdateView, CreateView, DeleteView, View
 from datetime import datetime
 from .filters import ProductFilter, CategoryFilter
 from .forms import PostForm
@@ -8,6 +9,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMix
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import redirect
 import os
+# from .tasks import hello
 
 
 class PostList(ListView):

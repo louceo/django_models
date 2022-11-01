@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 from pathlib import Path
 import os
 from telnetlib import AUTHENTICATION
+from decouple import config
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -22,7 +23,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get('SECRET_KEY')
+
+# SECRET_KEY = os.environ.get('SECRET_KEY')
+SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -158,16 +161,23 @@ USE_I18N = True
 
 USE_TZ = False
 
-# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+# SMTP Settings
 
-EMAIL_HOST = 'smtp.yandex.ru'
-EMAIL_PORT = 465
-EMAIL_HOST_USER = os.environ.get('EMAIL_CRED')
-EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_PASS')
-EMAIL_USE_TLS = False
-EMAIL_USE_SSL = True
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = config('EMAIL_CRED_GMAIL')
+EMAIL_HOST_PASSWORD = config('EMAIL_PASS_GMAIL')
+EMAIL_USE_TLS = True
+DEFAULT_FROM_EMAIL = f'Celery <{config("EMAIL_CRED_GMAIL")}>'
 
-DEFAULT_FROM_EMAIL = EMAIL_HOST_USER + '@yandex.ru'
+# YANDEX
+# EMAIL_HOST = 'smtp.yandex.ru'
+# EMAIL_PORT = 465
+# EMAIL_HOST_USER = os.environ.get('EMAIL_CRED_GMAIL')
+# EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_PASS_GMAIL')
+# DEFAULT_FROM_EMAIL = EMAIL_HOST_USER + '@yandex.ru'
+# EMAIL_USE_SSL = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
@@ -187,3 +197,13 @@ STATICFILES_DIRS = [
 APSCHEDULER_DATETIME_FORMAT = "N j, Y, f:s a"
 
 APSCHEDULER_RUN_NOW_TIMEOUT = 25  # Seconds
+
+
+# CELERY
+
+CELERY_BROKER_URL = 'redis://localhost:6379'
+CELERY_RESULT_BACKEND = 'redis://localhost:6379'
+CELERY_ACCEPT_CONTENT = ['application/json']
+CELERY_TASK_SERIALIZER = 'json'
+CELERY_RESULT_SERIALIZER = 'json'
+CELERY_TIMEZONE = 'Europe/Moscow'
