@@ -1,0 +1,2 @@
+2022-11-16 16:17:30,025 WARNING log Forbidden (CSRF token missing.): /articles/create/
+2022-11-16 16:17:59,800 WARNING log Forbidden (CSRF token missing.): /articles/create/

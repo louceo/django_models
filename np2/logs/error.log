@@ -1,0 +1,725 @@
+(<class 'django.template.exceptions.TemplateSyntaxError'>, TemplateSyntaxError("'sddsf' is not a registered tag library. Must be one of:\naccount\nadmin_list\nadmin_modify\nadmin_urls\ncache\ncustom_filter\ncustom_tags\nflatpages\ni18n\nl10n\nlog\nsocialaccount\nstatic\ntz"), <traceback object at 0x00000278353BE280>) C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\utils\log.py 2022-11-16 16:09:08,767 ERROR Internal Server Error: /search/
+Traceback (most recent call last):
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\defaulttags.py", line 1027, in find_library
+    return parser.libraries[name]
+KeyError: 'sddsf'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\backends\django.py", line 62, in render
+    return self.template.render(context)
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\base.py", line 175, in render
+    return self._render(context)
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\loader_tags.py", line 132, in render
+    compiled_parent = self.get_parent(context)
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\loader_tags.py", line 129, in get_parent
+    return self.find_template(parent, context)
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\loader_tags.py", line 107, in find_template
+    template, origin = context.template.engine.find_template(
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\base.py", line 200, in compile_nodelist
+    return parser.parse()
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\loader_tags.py", line 293, in do_extends
+    nodelist = parser.parse()
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\defaulttags.py", line 1089, in load
+    lib = find_library(parser, name)
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\defaulttags.py", line 1029, in find_library
+    raise TemplateSyntaxError(
+django.template.exceptions.TemplateSyntaxError: 'sddsf' is not a registered tag library. Must be one of:
+account
+admin_list
+admin_modify
+admin_urls
+cache
+custom_filter
+custom_tags
+flatpages
+i18n
+l10n
+log
+socialaccount
+static
+tz
+None C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\core\servers\basehttp.py 2022-11-16 16:09:08,784 ERROR "GET /search/ HTTP/1.1" 500 236588
+(<class 'django.template.exceptions.TemplateSyntaxError'>, TemplateSyntaxError("'fdsfdsfds' is not a registered tag library. Must be one of:\naccount\nadmin_list\nadmin_modify\nadmin_urls\ncache\ncustom_filter\ncustom_tags\nflatpages\ni18n\nl10n\nlog\nsocialaccount\nstatic\ntz"), <traceback object at 0x000001C1A96D0FC0>) C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\utils\log.py 2022-11-16 16:27:48,477 ERROR Internal Server Error: /news/
+Traceback (most recent call last):
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\defaulttags.py", line 1027, in find_library
+    return parser.libraries[name]
+KeyError: 'fdsfdsfds'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\loader.py", line 42, in select_template
+    return engine.get_template(template_name)
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\backends\django.py", line 34, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\engine.py", line 175, in get_template
+    template, origin = self.find_template(template_name)
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\base.py", line 200, in compile_nodelist
+    return parser.parse()
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\loader_tags.py", line 293, in do_extends
+    nodelist = parser.parse()
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\defaulttags.py", line 1089, in load
+    lib = find_library(parser, name)
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\defaulttags.py", line 1029, in find_library
+    raise TemplateSyntaxError(
+django.template.exceptions.TemplateSyntaxError: 'fdsfdsfds' is not a registered tag library. Must be one of:
+account
+admin_list
+admin_modify
+admin_urls
+cache
+custom_filter
+custom_tags
+flatpages
+i18n
+l10n
+log
+socialaccount
+static
+tz
+None C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\core\servers\basehttp.py 2022-11-16 16:27:48,519 ERROR "GET /news/ HTTP/1.1" 500 213293
+(<class 'django.template.exceptions.TemplateSyntaxError'>, TemplateSyntaxError("'fdsfdsfds' is not a registered tag library. Must be one of:\naccount\nadmin_list\nadmin_modify\nadmin_urls\ncache\ncustom_filter\ncustom_tags\nflatpages\ni18n\nl10n\nlog\nsocialaccount\nstatic\ntz"), <traceback object at 0x00000193D87274C0>) C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\utils\log.py 2022-11-16 16:30:31,865 ERROR Internal Server Error: /news/
+Traceback (most recent call last):
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\defaulttags.py", line 1027, in find_library
+    return parser.libraries[name]
+KeyError: 'fdsfdsfds'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\loader.py", line 42, in select_template
+    return engine.get_template(template_name)
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\backends\django.py", line 34, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\engine.py", line 175, in get_template
+    template, origin = self.find_template(template_name)
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\base.py", line 200, in compile_nodelist
+    return parser.parse()
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\loader_tags.py", line 293, in do_extends
+    nodelist = parser.parse()
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\defaulttags.py", line 1089, in load
+    lib = find_library(parser, name)
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\defaulttags.py", line 1029, in find_library
+    raise TemplateSyntaxError(
+django.template.exceptions.TemplateSyntaxError: 'fdsfdsfds' is not a registered tag library. Must be one of:
+account
+admin_list
+admin_modify
+admin_urls
+cache
+custom_filter
+custom_tags
+flatpages
+i18n
+l10n
+log
+socialaccount
+static
+tz
+None C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\core\servers\basehttp.py 2022-11-16 16:30:31,899 ERROR "GET /news/ HTTP/1.1" 500 213491
+(<class 'django.template.exceptions.TemplateSyntaxError'>, TemplateSyntaxError("'fdsfdsfds' is not a registered tag library. Must be one of:\naccount\nadmin_list\nadmin_modify\nadmin_urls\ncache\ncustom_filter\ncustom_tags\nflatpages\ni18n\nl10n\nlog\nsocialaccount\nstatic\ntz"), <traceback object at 0x00000167FFBD6380>) C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\utils\log.py 2022-11-16 16:32:51,940 ERROR Internal Server Error: /news/
+Traceback (most recent call last):
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\defaulttags.py", line 1027, in find_library
+    return parser.libraries[name]
+KeyError: 'fdsfdsfds'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\loader.py", line 42, in select_template
+    return engine.get_template(template_name)
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\backends\django.py", line 34, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\engine.py", line 175, in get_template
+    template, origin = self.find_template(template_name)
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\base.py", line 200, in compile_nodelist
+    return parser.parse()
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\loader_tags.py", line 293, in do_extends
+    nodelist = parser.parse()
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\defaulttags.py", line 1089, in load
+    lib = find_library(parser, name)
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\defaulttags.py", line 1029, in find_library
+    raise TemplateSyntaxError(
+django.template.exceptions.TemplateSyntaxError: 'fdsfdsfds' is not a registered tag library. Must be one of:
+account
+admin_list
+admin_modify
+admin_urls
+cache
+custom_filter
+custom_tags
+flatpages
+i18n
+l10n
+log
+socialaccount
+static
+tz
+None C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\core\servers\basehttp.py 2022-11-16 16:32:51,962 ERROR "GET /news/ HTTP/1.1" 500 213571
+(<class 'django.template.exceptions.TemplateSyntaxError'>, TemplateSyntaxError("'fdsfdsfds' is not a registered tag library. Must be one of:\naccount\nadmin_list\nadmin_modify\nadmin_urls\ncache\ncustom_filter\ncustom_tags\nflatpages\ni18n\nl10n\nlog\nsocialaccount\nstatic\ntz"), <traceback object at 0x000001D9118C3DC0>) C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\utils\log.py 2022-11-16 16:34:26,813 ERROR Internal Server Error: /news/
+Traceback (most recent call last):
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\defaulttags.py", line 1027, in find_library
+    return parser.libraries[name]
+KeyError: 'fdsfdsfds'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\loader.py", line 42, in select_template
+    return engine.get_template(template_name)
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\backends\django.py", line 34, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\engine.py", line 175, in get_template
+    template, origin = self.find_template(template_name)
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\base.py", line 200, in compile_nodelist
+    return parser.parse()
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\loader_tags.py", line 293, in do_extends
+    nodelist = parser.parse()
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\defaulttags.py", line 1089, in load
+    lib = find_library(parser, name)
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\defaulttags.py", line 1029, in find_library
+    raise TemplateSyntaxError(
+django.template.exceptions.TemplateSyntaxError: 'fdsfdsfds' is not a registered tag library. Must be one of:
+account
+admin_list
+admin_modify
+admin_urls
+cache
+custom_filter
+custom_tags
+flatpages
+i18n
+l10n
+log
+socialaccount
+static
+tz
+None C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\core\servers\basehttp.py 2022-11-16 16:34:26,836 ERROR "GET /news/ HTTP/1.1" 500 213389
+(<class 'django.template.exceptions.TemplateSyntaxError'>, TemplateSyntaxError("'fdsfdsfds' is not a registered tag library. Must be one of:\naccount\nadmin_list\nadmin_modify\nadmin_urls\ncache\ncustom_filter\ncustom_tags\nflatpages\ni18n\nl10n\nlog\nsocialaccount\nstatic\ntz"), <traceback object at 0x0000024222E2A100>) C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\utils\log.py 2022-11-16 16:38:51,349 ERROR Internal Server Error: /news/
+Traceback (most recent call last):
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\defaulttags.py", line 1027, in find_library
+    return parser.libraries[name]
+KeyError: 'fdsfdsfds'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\loader.py", line 42, in select_template
+    return engine.get_template(template_name)
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\backends\django.py", line 34, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\engine.py", line 175, in get_template
+    template, origin = self.find_template(template_name)
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\base.py", line 200, in compile_nodelist
+    return parser.parse()
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\loader_tags.py", line 293, in do_extends
+    nodelist = parser.parse()
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\defaulttags.py", line 1089, in load
+    lib = find_library(parser, name)
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\defaulttags.py", line 1029, in find_library
+    raise TemplateSyntaxError(
+django.template.exceptions.TemplateSyntaxError: 'fdsfdsfds' is not a registered tag library. Must be one of:
+account
+admin_list
+admin_modify
+admin_urls
+cache
+custom_filter
+custom_tags
+flatpages
+i18n
+l10n
+log
+socialaccount
+static
+tz
+None C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\core\servers\basehttp.py 2022-11-16 16:38:51,384 ERROR "GET /news/ HTTP/1.1" 500 213417
+(<class 'django.template.exceptions.TemplateSyntaxError'>, TemplateSyntaxError("'fdsfdsfds' is not a registered tag library. Must be one of:\naccount\nadmin_list\nadmin_modify\nadmin_urls\ncache\ncustom_filter\ncustom_tags\nflatpages\ni18n\nl10n\nlog\nsocialaccount\nstatic\ntz"), <traceback object at 0x0000019E431DACC0>) C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\utils\log.py 2022-11-16 16:42:16,146 ERROR Internal Server Error: /news/
+Traceback (most recent call last):
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\defaulttags.py", line 1027, in find_library
+    return parser.libraries[name]
+KeyError: 'fdsfdsfds'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\loader.py", line 42, in select_template
+    return engine.get_template(template_name)
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\backends\django.py", line 34, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\engine.py", line 175, in get_template
+    template, origin = self.find_template(template_name)
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\base.py", line 200, in compile_nodelist
+    return parser.parse()
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\loader_tags.py", line 293, in do_extends
+    nodelist = parser.parse()
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\defaulttags.py", line 1089, in load
+    lib = find_library(parser, name)
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\defaulttags.py", line 1029, in find_library
+    raise TemplateSyntaxError(
+django.template.exceptions.TemplateSyntaxError: 'fdsfdsfds' is not a registered tag library. Must be one of:
+account
+admin_list
+admin_modify
+admin_urls
+cache
+custom_filter
+custom_tags
+flatpages
+i18n
+l10n
+log
+socialaccount
+static
+tz
+None C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\core\servers\basehttp.py 2022-11-16 16:42:16,180 ERROR "GET /news/ HTTP/1.1" 500 213426
+(<class 'django.template.exceptions.TemplateSyntaxError'>, TemplateSyntaxError("'fdsfdsfds' is not a registered tag library. Must be one of:\naccount\nadmin_list\nadmin_modify\nadmin_urls\ncache\ncustom_filter\ncustom_tags\nflatpages\ni18n\nl10n\nlog\nsocialaccount\nstatic\ntz"), <traceback object at 0x0000026B5D8243C0>) C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\utils\log.py 2022-11-16 16:46:54,692 ERROR Internal Server Error: /news/
+Traceback (most recent call last):
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\defaulttags.py", line 1027, in find_library
+    return parser.libraries[name]
+KeyError: 'fdsfdsfds'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\loader.py", line 42, in select_template
+    return engine.get_template(template_name)
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\backends\django.py", line 34, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\engine.py", line 175, in get_template
+    template, origin = self.find_template(template_name)
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\base.py", line 200, in compile_nodelist
+    return parser.parse()
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\loader_tags.py", line 293, in do_extends
+    nodelist = parser.parse()
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\defaulttags.py", line 1089, in load
+    lib = find_library(parser, name)
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\defaulttags.py", line 1029, in find_library
+    raise TemplateSyntaxError(
+django.template.exceptions.TemplateSyntaxError: 'fdsfdsfds' is not a registered tag library. Must be one of:
+account
+admin_list
+admin_modify
+admin_urls
+cache
+custom_filter
+custom_tags
+flatpages
+i18n
+l10n
+log
+socialaccount
+static
+tz
+None C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\core\servers\basehttp.py 2022-11-16 16:46:54,728 ERROR "GET /news/ HTTP/1.1" 500 212872
+(<class 'django.template.exceptions.TemplateSyntaxError'>, TemplateSyntaxError("'fdsfdsfds' is not a registered tag library. Must be one of:\naccount\nadmin_list\nadmin_modify\nadmin_urls\ncache\ncustom_filter\ncustom_tags\nflatpages\ni18n\nl10n\nlog\nsocialaccount\nstatic\ntz"), <traceback object at 0x0000026B5DA8A100>) C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\utils\log.py 2022-11-16 16:54:25,117 ERROR Internal Server Error: /news/
+Traceback (most recent call last):
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\defaulttags.py", line 1027, in find_library
+    return parser.libraries[name]
+KeyError: 'fdsfdsfds'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\loader.py", line 42, in select_template
+    return engine.get_template(template_name)
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\backends\django.py", line 34, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\engine.py", line 175, in get_template
+    template, origin = self.find_template(template_name)
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\base.py", line 200, in compile_nodelist
+    return parser.parse()
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\loader_tags.py", line 293, in do_extends
+    nodelist = parser.parse()
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\defaulttags.py", line 1089, in load
+    lib = find_library(parser, name)
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\defaulttags.py", line 1029, in find_library
+    raise TemplateSyntaxError(
+django.template.exceptions.TemplateSyntaxError: 'fdsfdsfds' is not a registered tag library. Must be one of:
+account
+admin_list
+admin_modify
+admin_urls
+cache
+custom_filter
+custom_tags
+flatpages
+i18n
+l10n
+log
+socialaccount
+static
+tz
+None C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\core\servers\basehttp.py 2022-11-16 16:54:25,153 ERROR "GET /news/ HTTP/1.1" 500 212872
+(<class 'django.template.exceptions.TemplateSyntaxError'>, TemplateSyntaxError("'fdsfdsfds' is not a registered tag library. Must be one of:\naccount\nadmin_list\nadmin_modify\nadmin_urls\ncache\ncustom_filter\ncustom_tags\nflatpages\ni18n\nl10n\nlog\nsocialaccount\nstatic\ntz"), <traceback object at 0x000001F2D1C966C0>) C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\utils\log.py 2022-11-16 16:55:58,411 ERROR Internal Server Error: /news/
+Traceback (most recent call last):
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\defaulttags.py", line 1027, in find_library
+    return parser.libraries[name]
+KeyError: 'fdsfdsfds'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\loader.py", line 42, in select_template
+    return engine.get_template(template_name)
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\backends\django.py", line 34, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\engine.py", line 175, in get_template
+    template, origin = self.find_template(template_name)
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\base.py", line 200, in compile_nodelist
+    return parser.parse()
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\loader_tags.py", line 293, in do_extends
+    nodelist = parser.parse()
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\defaulttags.py", line 1089, in load
+    lib = find_library(parser, name)
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\defaulttags.py", line 1029, in find_library
+    raise TemplateSyntaxError(
+django.template.exceptions.TemplateSyntaxError: 'fdsfdsfds' is not a registered tag library. Must be one of:
+account
+admin_list
+admin_modify
+admin_urls
+cache
+custom_filter
+custom_tags
+flatpages
+i18n
+l10n
+log
+socialaccount
+static
+tz
+None C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\core\servers\basehttp.py 2022-11-16 16:56:01,964 ERROR "GET /news/ HTTP/1.1" 500 213062
+(<class 'django.template.exceptions.TemplateSyntaxError'>, TemplateSyntaxError("'ddsadsa' is not a registered tag library. Must be one of:\naccount\nadmin_list\nadmin_modify\nadmin_urls\ncache\ncustom_filter\ncustom_tags\nflatpages\ni18n\nl10n\nlog\nsocialaccount\nstatic\ntz"), <traceback object at 0x0000023730CA0C00>) C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\utils\log.py 2022-11-16 16:59:02,383 ERROR Internal Server Error: /news/
+Traceback (most recent call last):
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\defaulttags.py", line 1027, in find_library
+    return parser.libraries[name]
+KeyError: 'ddsadsa'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\loader.py", line 42, in select_template
+    return engine.get_template(template_name)
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\backends\django.py", line 34, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\engine.py", line 175, in get_template
+    template, origin = self.find_template(template_name)
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\base.py", line 200, in compile_nodelist
+    return parser.parse()
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\loader_tags.py", line 293, in do_extends
+    nodelist = parser.parse()
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\defaulttags.py", line 1089, in load
+    lib = find_library(parser, name)
+  File "C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\template\defaulttags.py", line 1029, in find_library
+    raise TemplateSyntaxError(
+django.template.exceptions.TemplateSyntaxError: 'ddsadsa' is not a registered tag library. Must be one of:
+account
+admin_list
+admin_modify
+admin_urls
+cache
+custom_filter
+custom_tags
+flatpages
+i18n
+l10n
+log
+socialaccount
+static
+tz
+None C:\Users\Omgit\OneDrive\Desktop\vs_projects\django_projects\NP2\venv\lib\site-packages\django\core\servers\basehttp.py 2022-11-16 16:59:05,165 ERROR "GET /news/ HTTP/1.1" 500 213046
